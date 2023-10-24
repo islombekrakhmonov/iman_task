@@ -12,7 +12,7 @@ var secretKey = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
 func GenerateToken() (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"exp": time.Now().Add(time.Hour * 24).Unix(), // Token expiration time (1 day)
+		"exp": time.Now().Add(time.Hour * 24).Unix(),
 	})
 
 	tokenString, err := token.SignedString([]byte(secretKey))
